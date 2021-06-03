@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Using OSX Core - OSX Core</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Using OSX Core";
+    var mkdocs_page_input_path = "Using OSX Core.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> OSX Core</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Using OSX Core</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#requirements">Requirements</a></li>
+    
+
+    <li class="toctree-l2"><a href="#standard-installation">Standard Installation</a></li>
+    
+
+    <li class="toctree-l2"><a href="#migration-to-OSX Core">Migration to OSX Core</a></li>
+    
+
+    <li class="toctree-l2"><a href="#troubleshooting">Troubleshooting</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Functions</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../functions/Client Functions/">Client Functions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../functions/Server Functions/">Server Functions</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Legal</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../legal/credits/">Credits</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../legal/licenses/">Licenses</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">OSX Core</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Using OSX Core</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/OSX Core/docs-site/edit/master/docs/Using OSX Core.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Using OSX Core</h1>
+
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>OSX Core is in the <strong>BETA</strong> stage and is not yet recommended for production use however, if you know  what you're doing, you should be fine.</p>
+<p>Please report any bugs with as much detail as possible by <a href="https://github.com/OSX Core/OSX Core/issues/new">making an issue</a> on the OSX Core repository!</p>
+</div>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h2>
+<ul>
+<li>An installation of FXServer artifact 2371 or greater (You can find the latest artifacts here; <a href="https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/">Windows</a> or <a href="https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/">Linux</a>)</li>
+<li>A fully configured installation of <a href="https://github.com/brouznouf/fivem-mysql-async">fivem-mysql-async</a> (or equivalent) version 3.2.0 or greater </li>
+</ul>
+<p>If you are installing OSX Core on a fresh installation of FXServer then follow the <a href="#standard-installation">Standard Installation</a> guide.<br />
+Otherwise, if you are replacing ESX with OSX Core then follow the <a href="#migration-to-OSX Core">Migration to OSX Core</a> guide.</p>
+<p>Both guides assume that you have knowledge of how to configure FXServer and that you know how to install resources so make sure you do.</p>
+<hr />
+<h2 id="standard-installation">Standard Installation<a class="headerlink" href="#standard-installation" title="Permanent link">#</a></h2>
+<p>Installing OSX Core is almost exactly the same as installing ESX so if you've already done that before, this is a piece of cake!<br />
+If you haven't, don't worry, it's not <em>that</em> hard.</p>
+<p>This guide assumes that you have already installed the  <strong>latest</strong> version of FXServer (preferably  following <a href="https://docs.fivem.net/docs/server-manual/setting-up-a-server/">this</a> guide) and that you have a MySQL server setup and configured correctly with the <code>mysql-async</code> resource.<br />
+If you don't have those setup yet, go and do that first!</p>
+<h3>Downloading</h3>
+
+<p>First, you need to download OSX Core and ESX's UI resources, you can do this one of two ways:</p>
+<ul>
+<li>Manually downloading the latest releases from GitHub, easiest for beginners</li>
+<li>Cloning using Git, the preferred method as it simplifies the update process down the track</li>
+</ul>
+<h4>Manually</h4>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While it is recommended that you organise your resources into sub directories, FXServer allows you to place resources anywhere in the <code>resources</code> provided that you do not place them within other resources or directories with names not surrounded by <code>[]</code>.</p>
+</div>
+<ul>
+<li>Download <a href="https://github.com/OSX Core/OSX Core/releases/latest">OSX Core</a> into the <code>resources</code> directory</li>
+<li>Download <a href="https://github.com/ESX-Org/esx_menu_default/releases/latest">esx_menu_default</a> into the <code>resources</code> directory</li>
+<li>Download <a href="https://github.com/ESX-Org/esx_menu_dialog/releases/latest">esx_menu_dialog</a> into the <code>resources</code> directory</li>
+<li>Download <a href="https://github.com/ESX-Org/esx_menu_list/releases/latest">esx_menu_list</a> into the <code>resources</code> directory</li>
+</ul>
+<h4>Using Git</h4>
+
+<p>Running the following commands while within your server's <code>resources</code> directory will download all of the resources.</p>
+<pre><code class="sh">git clone https://github.com/OSX Core/OSX Core OSX Core
+git clone https://github.com/ESX-Org/esx_menu_default esx_menu_default
+git clone https://github.com/ESX-Org/esx_menu_dialog esx_menu_dialog
+git clone https://github.com/ESX-Org/esx_menu_list esx_menu_list
+</code></pre>
+
+<h3>Installation</h3>
+
+<ol>
+<li>Import <code>OSX Core.sql</code> into your SQL database</li>
+<li>Add the following items to your <code>server.cfg</code></li>
+</ol>
+<pre><code>add_principal group.admin group.user
+add_ace resource.OSX Core command.add_ace allow
+add_ace resource.OSX Core command.add_principal allow
+add_ace resource.OSX Core command.remove_principal allow
+
+ensure mysql-async
+ensure OSX Core
+
+ensure esx_menu_default
+ensure esx_menu_list
+ensure esx_menu_dialog
+</code></pre>
+
+<p>Now start your server as normal.<br />
+If all goes well, you will see the message <code>[OSX Core] [INFO] OSX Core has been initialized</code> appear in your server console without any errors.</p>
+<hr />
+<h2 id="migration-to-OSX Core">Migration to OSX Core<a class="headerlink" href="#migration-to-OSX Core" title="Permanent link">#</a></h2>
+<p>One of the goals of the OSX Core project is complete backwards compatibility with ESX and EssentialMode.<br />
+This means that the installation is essentially a drag and drop process, provided that all the dependencies are up-to-date.</p>
+<p>Before doing anything, <strong>take a backup</strong>.<br />
+OSX Core is <strong>beta</strong> software and while nothing bad <em>should</em> happen, if it does, a full backup of both your server and database will save you.  </p>
+<h3>Additional Requirements</h3>
+
+<ul>
+<li>An installation of <a href="https://github.com/kanersps/essentialmode">EssentialMode</a> &gt;= version 6.4.0</li>
+</ul>
+<h3>Installation</h3>
+
+<ol>
+<li>
+<p>Make <strong>absolutely sure</strong> that <strong>all</strong> of the requirements are met.<br />
+    The easiest way to do this is to update FXServer, EssentialMode and MySQL Async to their <strong>latest</strong> versions.<br />
+    OSX Core <strong>will not</strong> work on outdated versions of the dependencies.<br />
+    <br/></p>
+</li>
+<li>
+<p>Delete the <code>es_extended</code> folder from your <code>resources</code> folder. (may also be located in the <code>[essential]</code> folder)<br />
+<br/></p>
+</li>
+<li>
+<p>Download OSX Core into your <code>resources</code> folder.<br />
+    You can do this by either creating a folder named <code>OSX Core</code> in the resources folder and unzipping the content of <a href="https://github.com/OSX Core/OSX Core/archive/master.zip">this zip</a> into it or, if you have Git installed,<br />
+    running the command <code>git clone https://github.com/OSX Core/OSX Core OSX Core</code> while in the <code>resources</code> folder.<br />
+    <br/></p>
+</li>
+<li>
+<p>Add the following items to your <code>server.cfg</code>:</p>
+</li>
+</ol>
+<pre><code>add_principal group.admin group.user
+add_ace resource.OSX Core command.add_ace allow
+add_ace resource.OSX Core command.add_principal allow
+add_ace resource.OSX Core command.remove_principal allow
+</code></pre>
+
+<p>Now start your server as normal.<br />
+If all goes well, you will see the message <code>[OSX Core] [INFO] OSX Core has been initialized</code> appear in your server console without any errors.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<p>Please make sure that you followed the appropriate guide and that you followed the guide's instructions exactly.<br />
+If you still can't not working or you are getting errors in your server console, please ask for help in the <a href="https://discord.gg/qKYBQH8">ExM Discord</a> in the <a href="https://discord.gg/9P4eDgA">#support channel</a> and be sure to provide as much detail as possible!</p>
+<p>If there are any common things people get stuck on or easily fixed errors, we'll add work arounds here!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../functions/Client Functions/" class="btn btn-neutral float-right" title="Client Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/OSX Core/docs-site/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../functions/Client Functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
